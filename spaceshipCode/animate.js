@@ -32,7 +32,18 @@ function blueShipRotateBack(ship){
 	ship.style.background = 'url("split_up/spaceships_05.gif")';
 }
 
-function
+function fire(){
+	var bomb = document.getElementById("fire");
+	var ship = document.getElementById("spaceship");
+	var shipVerticalPosition = ship.offsetTop;
+	var shipHorizontalPosition = ship.offsetLeft;
+	bomb.style.background = 'url("spaceships_208L.gif") no-repeat';
+	bomb.style.width = "14px";
+	bomb.style.height = "9px";
+	bomb.position = "absolute";
+	bomb.style.left = shipHorizontalPosition+22+"px";
+	bomb.style.top = shipVerticalPosition+"px";
+}
 document.addEventListener("keypress",function(event){
 	if(event.keyCode==38){
 		moveUp();
