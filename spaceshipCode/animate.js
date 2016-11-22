@@ -2,25 +2,26 @@ $(document).ready(function(){
 function moveUp(){
 	var ship = document.getElementById("spaceship");
 	var currentVerticalPosition = ship.offsetTop;
-	blueShipRotateUp(ship);
-	ship.style.top=(currentVerticalPosition-8)+"px";
+	if (currentVerticalPosition-8>=0)
+		ship.style.top=(currentVerticalPosition-8)+"px";
 }
 function moveDown(){
 	var ship = document.getElementById("spaceship");
 	var currentVerticalPosition = ship.offsetTop;
-	blueShipRotateDown(ship);
-	ship.style.top=(currentVerticalPosition+8)+"px";
+	if (currentVerticalPosition+8<=378)
+		ship.style.top=(currentVerticalPosition+8)+"px";
 }
 function moveLeft(){
 	var ship = document.getElementById("spaceship");
 	var currentHorizontalPosition = ship.offsetLeft;
-	ship.style.left=(currentHorizontalPosition-8)+"px";
+	if (currentHorizontalPosition-8>=0)
+		ship.style.left=(currentHorizontalPosition-8)+"px";
 }
 function moveRight(){
 	var ship = document.getElementById("spaceship");
 	var currentHorizontalPosition = ship.offsetLeft;
-	ship.style.left=(currentHorizontalPosition+8)+"px";
-
+	if (currentHorizontalPosition-8<=356)
+		ship.style.left=(currentHorizontalPosition+8)+"px";
 }
 function blueShipRotateDown(ship){
 	ship.style.background = 'url("split_up/spaceships_65.gif")';
