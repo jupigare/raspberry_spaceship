@@ -1,3 +1,4 @@
 node_modules/**
 bower_components/**
 ip_address.txt
+.DS_Store
