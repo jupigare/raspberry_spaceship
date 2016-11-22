@@ -37,7 +37,8 @@ function fire(){
 	var ship = document.getElementById("spaceship");
 	var shipVerticalPosition = ship.offsetTop;
 	var shipHorizontalPosition = ship.offsetLeft;
-	bomb.style.background = 'url("spaceships_208L.gif") no-repeat';
+	console.log(shipVerticalPosition,shipHorizontalPosition);
+	bomb.style.background = 'url("split_up/spaceships_208L.gif") no-repeat';
 	bomb.style.width = "14px";
 	bomb.style.height = "9px";
 	bomb.position = "absolute";
@@ -45,15 +46,16 @@ function fire(){
 	bomb.style.top = shipVerticalPosition+"px";
 }
 document.addEventListener("keypress",function(event){
-	if(event.keyCode==38){
+	console.log(event);
+	if(event.key=="ArrowUp"){
 		moveUp();
-	}else if(event.keyCode==40){
+	}else if(event.key=="ArrowDown"){
 		moveDown();
-	}else if(event.keyCode==37){
+	}else if(event.key=="ArrowLeft"){
 		moveLeft();
-	}else if(event.keyCode==39){
+	}else if(event.key=="ArrowRight"){
 		moveRight();
-	}else if(event.keyCode==65){
+	}else if(event.key=="a"){
 		fire();
 	}
 })
