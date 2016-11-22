@@ -1,0 +1,17 @@
+#container{
+	width:400px;
+	height:400px;
+	position:relative;
+	background-color:grey;
+}
+#spaceship{
+	background:url(split_up/spaceships_05.gif) no-repeat;
+	position:absolute;
+	bottom:50%;
+	width:22px;
+	height:22px;
+}
+#fire{
+	
+}
+
