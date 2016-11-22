@@ -47,13 +47,13 @@ function fire(){
 }
 document.addEventListener("keypress",function(event){
 	console.log(event);
-	if(event.key=="ArrowUp"){
+	if(event.key=="i"){
 		moveUp();
-	}else if(event.key=="ArrowDown"){
+	}else if(event.key=="k"){
 		moveDown();
-	}else if(event.key=="ArrowLeft"){
+	}else if(event.key=="j"){
 		moveLeft();
-	}else if(event.key=="ArrowRight"){
+	}else if(event.key=="l"){
 		moveRight();
 	}else if(event.key=="a"){
 		fire();
