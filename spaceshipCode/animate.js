@@ -51,6 +51,18 @@ function fire(){
 	var shipVerticalPosition = ship.offsetTop, shipHorizontalPosition = ship.offsetLeft;
 	fire.style.top = (shipVerticalPosition+8)+"px";
 	fire.style.left = (shipHorizontalPosition+22)+"px";
+	var id = setInterval(frame, 5);
+	function frame() {
+		var pos = fire.offsetLeft;
+		if(pos === 390) {
+			clearInterval(id);
+			container.removeChild(fire);
+		}
+		else{
+			pos++;
+			fire.style.left = pos + 'px';
+		}
+	}
 }
 document.addEventListener("keypress",function(event){
 	console.log(event);
