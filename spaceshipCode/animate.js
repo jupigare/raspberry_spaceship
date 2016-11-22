@@ -21,24 +21,20 @@ function blueShipConstructor(){
 		return ship.offsetLeft;
 	}
 	this.moveUp = function(){
-		var currentVerticalPosition = getVertical();
-		if (currentVerticalPosition-8>=0)
-			ship.style.top=(currentVerticalPosition-8)+"px";
+		if (getVertical()-8>=0)
+			ship.style.top=(getVertical()-8)+"px";
 	}
 	this.moveDown = function(){
-		var currentVerticalPosition = getVertical();
-		if (currentVerticalPosition-8>=0)
-			ship.style.top=(currentVerticalPosition+8)+"px";
+		if (getVertical()+8<=378)
+			ship.style.top=(getVertical()+8)+"px";
 	}
 	this.moveLeft = function(){
-		var currentHorizontalPosition = getHorizontal();
-		if (currentHorizontalPosition-8>=0)
-			ship.style.left=(currentHorizontalPosition-8)+"px";
+		if (getHorizontal()-8>=0)
+			ship.style.left=(getHorizontal()-8)+"px";
 	}
 	this.moveRight = function(){
-		var currentHorizontalPosition = getHorizontal();
-		if (currentHorizontalPosition-8<=356)
-			ship.style.left=(currentHorizontalPosition+8)+"px";
+		if (getHorizontal()+8<=356)
+			ship.style.left=(getHorizontal()+8)+"px";
 	}
 	this.fire = function(){
 		var fire = document.createElement("div");
@@ -92,7 +88,6 @@ setInterval(function generateEnemy(){
 },8000);
 
 document.addEventListener("keypress",function(event){
-	console.log(event);
 	if(event.key=="i"){
 		blueship.moveUp();
 	}else if(event.key=="k"){
