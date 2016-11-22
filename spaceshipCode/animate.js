@@ -1,4 +1,8 @@
 $(document).ready(function(){
+
+var shipVerticalPosition = 0;
+var shipHorizontalPosition = 0;
+
 function moveUp(){
 	var ship = document.getElementById("spaceship");
 	var currentVerticalPosition = ship.offsetTop;
@@ -35,15 +39,17 @@ function blueShipRotateBack(ship){
 function fire(){
 	var bomb = document.getElementById("fire");
 	var ship = document.getElementById("spaceship");
-	var shipVerticalPosition = ship.offsetTop;
-	var shipHorizontalPosition = ship.offsetLeft;
+	shipVerticalPosition = ship.offsetTop;
+	shipHorizontalPosition = ship.offsetLeft;
 	console.log(shipVerticalPosition,shipHorizontalPosition);
 	bomb.style.background = 'url("split_up/spaceships_208L.gif") no-repeat';
 	bomb.style.width = "14px";
 	bomb.style.height = "9px";
 	bomb.position = "absolute";
 	bomb.style.left = shipHorizontalPosition+22+"px";
+	console.log(shipHorizontalPosition+22);
 	bomb.style.top = shipVerticalPosition+"px";
+	console.log(shipVerticalPosition)
 }
 document.addEventListener("keypress",function(event){
 	console.log(event);
