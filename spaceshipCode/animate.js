@@ -32,14 +32,31 @@ function blueShipRotateUp(ship){
 function blueShipRotateBack(ship){
 	ship.style.background = 'url("split_up/spaceships_05.gif")';
 }
-function generateEnemy(){
+
+setInterval(function generateEnemy(){
 	var enemy = document.createElement("div");
 	enemy.className = "enemy94";
-	enemy.background = "url('split_up/spaceships_94R') no-repeat";
 	container.appendChild(enemy);
-	//not finished yet
+	enemy.style.position = "absolute";
+	enemy.style.width = "26px";
+	enemy.style.height = "37px";
+	enemy.style.background = "url('split_up/spaceships_94R.gif') no-repeat";
+	enemy.style.left = "370px";
+	enemy.style.top = Math.floor(Math.random()*363)+"px";
+	var id = setInterval(frame,20);
+	function frame() {
+		var pos = enemy.offsetLeft;
+		if(pos == 0) {
+			clearInterval(id);
+			container.removeChild(enemy);
+		}
+		else{
+			pos--;
+			enemy.style.left = pos + 'px';
+		}
+	}
 
-}
+},8000);
 function fire(){
 	var fire = document.createElement("div");
 	fire.className = "fire";
