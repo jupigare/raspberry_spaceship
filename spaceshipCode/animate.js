@@ -1,25 +1,24 @@
 $(document).ready(function(){
 
+var container = document.getElementById("container");
+var ship = document.getElementById("spaceship");
+
 function moveUp(){
-	var ship = document.getElementById("spaceship");
 	var currentVerticalPosition = ship.offsetTop;
 	if (currentVerticalPosition-8>=0)
 		ship.style.top=(currentVerticalPosition-8)+"px";
 }
 function moveDown(){
-	var ship = document.getElementById("spaceship");
 	var currentVerticalPosition = ship.offsetTop;
 	if (currentVerticalPosition+8<=378)
 		ship.style.top=(currentVerticalPosition+8)+"px";
 }
 function moveLeft(){
-	var ship = document.getElementById("spaceship");
 	var currentHorizontalPosition = ship.offsetLeft;
 	if (currentHorizontalPosition-8>=0)
 		ship.style.left=(currentHorizontalPosition-8)+"px";
 }
 function moveRight(){
-	var ship = document.getElementById("spaceship");
 	var currentHorizontalPosition = ship.offsetLeft;
 	if (currentHorizontalPosition-8<=356)
 		ship.style.left=(currentHorizontalPosition+8)+"px";
@@ -33,32 +32,25 @@ function blueShipRotateUp(ship){
 function blueShipRotateBack(ship){
 	ship.style.background = 'url("split_up/spaceships_05.gif")';
 }
+function generateEnemy(){
+	var enemy = document.createElement("div");
+	enemy.className = "enemy94";
+	enemy.background = "url('split_up/spaceships_94R') no-repeat";
+	container.appendChild(enemy);
+	//not finished yet
 
+}
 function fire(){
-	var bomb = document.getElementById("fire");
-	var ship = document.getElementById("spaceship");
-	var shipVerticalPosition = ship.offsetTop;
-	var shipHorizontalPosition = ship.offsetLeft;
-	console.log(shipVerticalPosition,shipHorizontalPosition);
-	bomb.style.background = 'url("split_up/spaceships_208L.gif") no-repeat';
-	bomb.style.width = "14px";
-	bomb.style.height = "9px";
-	bomb.position = "absolute";
-	bomb.style.left = (shipHorizontalPosition+22)+"px";
-	console.log(shipHorizontalPosition+22);
-	bomb.style.top = (shipVerticalPosition)+"px";
-	console.log(shipVerticalPosition)
-	var pos = 0;
-	var id = setInterval(frame, 5);
-	function frame() {
-		if(pos === 400) {
-			clearInterval(id);
-		}
-		else{
-			pos++;
-			bomb.style.left = pos + 'px';
-		}
-	}
+	var fire = document.createElement("div");
+	fire.className = "fire";
+	container.appendChild(fire);
+	fire.style.position = "absolute";
+	fire.style.width = "14px";
+	fire.style.height = "9px";
+	fire.style.background = 'url("split_up/spaceships_208L.gif") no-repeat';
+	var shipVerticalPosition = ship.offsetTop, shipHorizontalPosition = ship.offsetLeft;
+	fire.style.top = (shipVerticalPosition+8)+"px";
+	fire.style.left = (shipHorizontalPosition+22)+"px";
 }
 document.addEventListener("keypress",function(event){
 	console.log(event);
